@@ -6,3 +6,24 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+
+.nav-link.active {
+  border-bottom: 3px solid #007bff;
+  font-weight: bolder;
+  color: #007bff;
+}
+
+.menu-link {
+  text-decoration: none;
+}
+
+.container-main{
+  background-image: url('/public/media/intro.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: white;
+}
+
