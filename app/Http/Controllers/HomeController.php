@@ -35,10 +35,12 @@ class HomeController extends Controller
             'totalPieces' => Orders::sum('total_pieces'),
             'balancePieces' => Orders::sum('balance_pieces'),
             'totalAmount' => Orders::sum('total_amount'),
+            'DiscountAmount' => Orders::sum('discount_amount'),
+            'ReceivedAmount' => Orders::sum('received_amount'),
             'balanceAmount' => Orders::sum('balance_amount'),
             'totalExpenses' => Expenses::whereYear('created_at', date('Y'))->sum('amount'),
-            'productsPieces' => Products::withSum('orders as total_pieces_sum', 'total_pieces')->withSum('orders as balance_pieces_sum', 'balance_pieces')->get(['id', 'name']),
-            'containersPieces' => Containers::withSum('orders as total_pieces_sum', 'total_pieces')->withSum('orders as balance_pieces_sum', 'balance_pieces')->get(['name']),
+            'productsPieces' => Products::withSum('orders as total_pieces_sum', 'total_pieces')->withSum('orders as balance_pieces_sum', 'balance_pieces')->withSum('orders as dispatched_pieces_sum', 'dispatched_pieces')->get(['id', 'name']),
+            'containersPieces' => Containers::withSum('orders as total_pieces_sum', 'total_pieces')->withSum('orders as balance_pieces_sum', 'balance_pieces')->withSum('orders as dispatched_pieces_sum', 'dispatched_pieces')->get(['name']),
         ];
         return view('home', $data);
     }

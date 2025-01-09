@@ -20,8 +20,8 @@
 				<div class="col-md-3 card bg-white text-center py-2">
 					<div class="fs-1 fw-bolder py-3">Earning</div>
 					<div class="fs-2"><span class="fw-bold">Total: </span><span class="">{{ $totalAmount }}</span></div>
-					<div class="fs-2"><span class="fw-bold">Received: </span><span class="">{{ $totalAmount -
-							$balanceAmount}}</span></div>
+					<div class="fs-2"><span class="fw-bold">Discount: </span><span class="">{{ $DiscountAmount}}</span></div>
+					<div class="fs-2"><span class="fw-bold">Received: </span><span class="">{{ $ReceivedAmount}}</span></div>
 					<div class="fs-2"><span class="fw-bold">Balance: </span><span class="">{{ $balanceAmount }}</span>
 					</div>
 				</div>
@@ -39,6 +39,8 @@
 					<div class="fs-1 fw-bolder py-3">{{ $container->name }}</div>
 					<div class="fs-2"><span class="fw-bold">Total: </span><span class="">{{ $container->total_pieces_sum
 							?? 0 }}</span></div>
+					<div class="fs-2"><span class="fw-bold">Dispatched: </span><span class="">{{ $container->dispatched_pieces_sum
+							?? 0 }}</span></div>
 					<div class="fs-2"><span class="fw-bold">Remaining: </span><span class="">{{
 							$container->balance_pieces_sum ?? 0 }}</span></div>
 				</div>
@@ -50,6 +52,8 @@
 				<div class="col-md-3 card bg-white text-center py-2">
 					<div class="fs-1 fw-bolder py-3">{{ $product->name }}</div>
 					<div class="fs-2"><span class="fw-bold">Total: </span><span class="">{{ $product->total_pieces_sum
+							?? 0 }}</span></div>
+					<div class="fs-2"><span class="fw-bold">Dispatched: </span><span class="">{{ $product->dispatched_pieces_sum
 							?? 0 }}</span></div>
 					<div class="fs-2"><span class="fw-bold">Remaining: </span><span class="">{{
 							$product->balance_pieces_sum ?? 0 }}</span></div>
